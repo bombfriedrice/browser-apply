@@ -21,9 +21,7 @@ class ApplicationResults(BaseModel):
 # Configure the browser to connect to your Chrome instance
 browser = Browser(
     config=BrowserConfig(
-        chrome_instance_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-        chrome_profile='/Users/rjmoscardon/Library/Application Support/Google/Chrome/Profile 8'  # Your specific profile path
-    )
+        chrome_instance_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',    )
 )
 
 # Create a controller with the configured browser
@@ -31,7 +29,7 @@ controller = Controller(output_model=ApplicationResults)
 
 async def main():
     # Initialize the LLM (using API key from .env)
-    llm = ChatOpenAI(model="gpt-4")
+    llm = ChatOpenAI(model="gpt-4o")
 
     # Define the specific task instructions for the agent
     task = """
