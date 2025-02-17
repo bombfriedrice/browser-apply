@@ -21,10 +21,8 @@ class ApplicationResults(BaseModel):
 # Configure the browser to connect to your Chrome instance
 browser = Browser(
     config=BrowserConfig(
-        # Specify the path to your Chrome executable based on your OS
-        chrome_instance_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',  # macOS path
-        # For Windows, use: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-        # For Linux, use: '/usr/bin/google-chrome'
+        chrome_instance_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+        chrome_profile='/Users/rjmoscardon/Library/Application Support/Google/Chrome/Profile 8'  # Your specific profile path
     )
 )
 
