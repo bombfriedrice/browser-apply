@@ -1,6 +1,6 @@
 # Required imports
 from langchain_openai import ChatOpenAI
-from browser_use import Agent, Controller
+from browser_use import Agent, Controller, BrowserConfig
 from pydantic import BaseModel
 from typing import List
 from dotenv import load_dotenv
@@ -21,15 +21,15 @@ class ApplicationResults(BaseModel):
 # Create a controller with Chrome profile settings to use existing login
 controller = Controller(
     output_model=ApplicationResults,
-    browser_settings={  # Changed to browser_settings
-        "browser": "chrome",
-        "use_existing_profile": True
-    }
+    browser=BrowserConfig(
+        browser="chrome",
+        use_existing_profile=True
+    )
 )
 
 async def main():
     # Initialize the LLM (using API key from .env)
-    llm = ChatOpenAI(model="gpt-4o")
+    llm = ChatOpenAI(model="gpt-4")
 
     # Define the specific task instructions for the agent
     task = """
