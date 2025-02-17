@@ -1,6 +1,6 @@
 # Required imports
 from langchain_openai import ChatOpenAI
-from browser_use import Agent, Browser, BrowserConfig
+from browser_use import Agent, Browser, BrowserConfig, Controller
 from pydantic import BaseModel
 from typing import List
 from dotenv import load_dotenv
