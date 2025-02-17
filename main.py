@@ -22,7 +22,7 @@ class ApplicationResults(BaseModel):
 controller = Controller(
     output_model=ApplicationResults,
     browser=BrowserConfig(
-        browser="chrome",
+        browser_type="chrome",  # Using correct parameter name
         use_existing_profile=True
     )
 )
