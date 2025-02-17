@@ -1,6 +1,6 @@
 # Required imports
 from langchain_openai import ChatOpenAI
-from browser_use import Agent, Controller, BrowserConfig
+from browser_use import Agent, Browser, BrowserConfig
 from pydantic import BaseModel
 from typing import List
 from dotenv import load_dotenv
@@ -18,13 +18,20 @@ class JobApplication(BaseModel):
 class ApplicationResults(BaseModel):
     applications: List[JobApplication]
 
-# Create a controller with Chrome profile settings to use existing login
+# Configure the browser to connect to your Chrome instance
+browser = Browser(
+    config=BrowserConfig(
+        # Specify the path to your Chrome executable based on your OS
+        chrome_instance_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',  # macOS path
+        # For Windows, use: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+        # For Linux, use: '/usr/bin/google-chrome'
+    )
+)
+
+# Create a controller with the configured browser
 controller = Controller(
     output_model=ApplicationResults,
-    browser=BrowserConfig(
-        browser_type="chrome",  # Using correct parameter name
-        use_existing_profile=True
-    )
+    browser=browser
 )
 
 async def main():
@@ -69,6 +76,10 @@ async def main():
             print(f"Status: {app.status}")
             if app.reason:
                 print(f"Notes: {app.reason}")
+
+    # Wait for user input before closing the browser
+    input('Press Enter to close the browser...')
+    await browser.close()
 
 if __name__ == "__main__":
     import asyncio
