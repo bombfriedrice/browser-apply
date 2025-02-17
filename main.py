@@ -21,8 +21,10 @@ class ApplicationResults(BaseModel):
 # Create a controller with Chrome profile settings to use existing login
 controller = Controller(
     output_model=ApplicationResults,
-    browser="chrome",  # Changed from browser_config
-    use_existing_profile=True  # Moved out of browser_config
+    browser_settings={  # Changed to browser_settings
+        "browser": "chrome",
+        "use_existing_profile": True
+    }
 )
 
 async def main():
