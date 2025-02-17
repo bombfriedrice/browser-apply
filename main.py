@@ -29,10 +29,7 @@ browser = Browser(
 )
 
 # Create a controller with the configured browser
-controller = Controller(
-    output_model=ApplicationResults,
-    browser=browser
-)
+controller = Controller(output_model=ApplicationResults)
 
 async def main():
     # Initialize the LLM (using API key from .env)
@@ -57,7 +54,8 @@ async def main():
     agent = Agent(
         task=task,
         llm=llm,
-        controller=controller
+        controller=controller,  # Controller is needed for structured output
+        browser=browser  # Pass the browser instance to be reused
     )
 
     # Execute the agent and get the history
