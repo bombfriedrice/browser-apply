@@ -47,11 +47,11 @@ async def main():
        - Make sure Resume Resume_RJ2.pdf is the one selected and click 'continue' if you get confused just click 'continue' do not try to exit and save. we want to complete the application.
        - If it takes you to a window that says Select job experience that is relevant, just click 'continue'
        - When prompted for personal information, use:
-         * Name: RJ Moscardon
-         * Email: rjmoscardon@gmail.com
-         * Phone: 5105704027
+         * Name: John Doe
+         * Email: Johnd.Doe@gmail.com
+         * Phone: 1234567890
          * Location: San Francisco, CA
-         * LinkedIn: linkedin.com/in/rjmoscardon
+         * LinkedIn: linkedin.com/in/Johndoe
        - Complete any additional application steps and click 'continue' for voluntary information select do not want to share
        - Track the application status
     5. Keep track of which jobs were applied to and any issues encountered
