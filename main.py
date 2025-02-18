@@ -44,11 +44,11 @@ async def main():
        - Distance: Within 25 miles
     4. For each job listing that has an "Easily Apply" tag:
        - Click to apply
-       - Make sure Resume Resume_RJ2.pdf is the one selected and click 'continue' if you get confused just click 'continue' do not try to exit and save. we want to complete the application.
+       - Make sure Resume Resume_Johndoe.pdf is the one selected and click 'continue' if you get confused just click 'continue' do not try to exit and save. we want to complete the application.
        - If it takes you to a window that says Select job experience that is relevant, just click 'continue'
        - When prompted for personal information, use:
          * Name: John Doe
-         * Email: Johnd.Doe@gmail.com
+         * Email: John.Doe@gmail.com
          * Phone: 1234567890
          * Location: San Francisco, CA
          * LinkedIn: linkedin.com/in/Johndoe
